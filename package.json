@@ -1,16 +1,16 @@
 {
-  "name": "changeset-version-publish-action",
+  "name": "has-changesets-action",
   "description": "Changeset Version Publish Action",
   "version": "0.0.0",
   "author": "",
   "private": true,
-  "homepage": "https://github.com/jamilomar/changeset-version-publish-action",
+  "homepage": "https://github.com/jamilomar/has-changesets-action",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jamilomar/changeset-version-publish-action.git"
+    "url": "git+https://github.com/jamilomar/has-changesets-action.git"
   },
   "bugs": {
-    "url": "https://github.com/jamilomar/changeset-version-publish-action/issues"
+    "url": "https://github.com/jamilomar/has-changesets-action/issues"
   },
   "keywords": [
     "actions",
