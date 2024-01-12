@@ -10,7 +10,7 @@ export async function run(): Promise<void> {
     core.debug(`Checking for changesets`)
 
     const result = await hasChangesets()
-
+    core.debug(`Changesets found: ${result}`)
     core.setOutput('hasChangesets', result.toString())
   } catch (error) {
     // Fail the workflow run if an error occurs
