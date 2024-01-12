@@ -1,5 +1,5 @@
 name: 'Changesets Version and Publish Action'
-description: 'Provide a description here'
+description: 'Action to check if a changeset was created, helpfull for CI/CD'
 author: 'JamilOmar'
 
 # Add your action's branding here. This will appear on the GitHub Marketplace.
@@ -7,17 +7,11 @@ branding:
   icon: 'heart'
   color: 'red'
 
-# Define your inputs here.
-inputs:
-  milliseconds:
-    description: 'Your input description here'
-    required: true
-    default: '1000'
 
 # Define your outputs here.
 outputs:
-  time:
-    description: 'Your output description here'
+  hasChangeset:
+    description: 'Indicates if a changeset was found'
 
 runs:
   using: node20
