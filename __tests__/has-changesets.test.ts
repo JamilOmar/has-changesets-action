@@ -11,17 +11,17 @@ jest.mock('@changesets/read', () => {
 })
 
 describe('hasChangeSets', () => {
-  it('calls hasChangeSets and not readChangesets', async () => {
+  it('calls hasChangeSets without preState', async () => {
     jest
       .spyOn(pre, 'readPreState')
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .mockResolvedValue({} as any)
     const result = await hasChangeSets()
-    expect(result).toBe(false)
+    expect(result).toBe(true)
 
-    expect(readChangesets).not.toHaveBeenCalled()
+    expect(readChangesets).toHaveBeenCalled()
   })
-  it('calls hasChangeSets and readChangesets', async () => {
+  it('calls hasChangeSets and preState', async () => {
     jest
       .spyOn(pre, 'readPreState')
       // eslint-disable-next-line @typescript-eslint/no-explicit-any

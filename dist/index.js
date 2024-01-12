@@ -57568,14 +57568,16 @@ const read_1 = __importDefault(__nccwpck_require__(6727));
 const core = __importStar(__nccwpck_require__(2186));
 async function hasChangesets(cwd = process.cwd()) {
     const preState = await (0, pre_1.readPreState)(cwd);
+    const changesets = await (0, read_1.default)(cwd);
     core.debug(`readPreState value: ${JSON.stringify(preState)}`);
+    core.debug(`readChangesets value: ${JSON.stringify(changesets)}`);
     if (preState?.mode === 'pre') {
-        const changesets = await (0, read_1.default)(cwd);
-        core.debug(`readChangesets value: ${JSON.stringify(changesets)}`);
         const changesetsToFilter = new Set(preState.changesets);
         return changesets.filter(x => !changesetsToFilter.has(x.id)).length > 0;
     }
-    return false;
+    else {
+        return changesets.length > 0;
+    }
 }
 exports["default"] = hasChangesets;
 
