@@ -41,3 +41,12 @@ jobs:
       - name: Test
         id: npm-ci-test
         run: npm run ci-test
+      
+      - name: Test Local Action
+        id: test-action
+        uses: ./
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Print hasChangeset Output
+        run: echo "${{ steps.test-action.outputs.hasChangeset }}"
